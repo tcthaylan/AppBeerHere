@@ -1,6 +1,8 @@
 import styled from 'styled-components/native'
 import AddressCard from '../../components/AddressCard'
 import Category from '../../components/Category'
+import Pub from '../../components/Pub'
+
 export const Container = styled.View`
 
 `
@@ -27,7 +29,7 @@ export const HTitle = styled.Text`
   margin-left: 15px;
 `
 export const CategoriesContainer = styled.View`
-  margin-top: 20px;
+  margin-top: 0px;
   margin-left: 15px;
 `
 export const CategoryText = styled.Text`
@@ -42,4 +44,24 @@ export const CategoriesList = styled.View`
 export const CategoryCard = styled(Category)`
   margin-right: 10px;
   background-color: ${props => props.color ? props.color : '#fff'};
+`
+
+export const PubsContainer = styled.View`
+  margin-top: 15px;
+  margin-left: 15px;
+
+  width: 400px;
+`
+
+export const PubText = styled.Text`
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 10px;
+`
+
+export const PubsList = styled.View`
+
+`
+export const PubCard = styled(Pub)`
+  margin-bottom: 15px;
 `

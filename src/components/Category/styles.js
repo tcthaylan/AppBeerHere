@@ -2,7 +2,7 @@ import styled from 'styled-components/native'
 
 export const Container = styled.View`
   width: 100px;
-  height: 130px;
+  height: 125px;
   border: 2px solid #000;
   background-color: #fff;
   /* justify-content: center; */
@@ -15,11 +15,11 @@ export const Container = styled.View`
 export const Image = styled.Image.attrs({
   source: require('../../assets/Images/beer-category.png')
 })`
-  width: 70px;
-  height: 70px;
+  width: 65px;
+  height: 65px;
 `
 export const Text = styled.Text`
   font-size: 17px;
   font-weight: bold;
-  margin-bottom: 3px;
+  margin-bottom: 4px;
 `

@@ -9,7 +9,11 @@ import {
   CategoriesContainer,
   CategoriesList,
   CategoryCard,
-  CategoryText
+  CategoryText,
+  PubsContainer,
+  PubText,
+  PubsList,
+  PubCard
 } from './styles';
 
 const Home = () => {
@@ -37,6 +41,13 @@ const Home = () => {
           <CategoryCard name="cerveja" />
         </CategoriesList>
       </CategoriesContainer>
+      <PubsContainer>
+        <PubText>Cervejárias</PubText>
+        <PubsList>
+          <PubCard name="Cervejaria - Goose Island" address="Av. Presidente Castelo Branco, 102 - SP" />
+          <PubCard name="Cervejaria - Goose Island" address="Av. Presidente Castelo Branco, 102 - SP" />
+        </PubsList>
+      </PubsContainer>
     </Container>
   )
 }
