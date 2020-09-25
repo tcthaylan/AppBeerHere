@@ -17,7 +17,7 @@ const AppRoutes = () => (
           if (route.name === 'Home') {
             iconName = focused ? 'home' : 'home';
           } else if (route.name === 'Map') {
-            iconName = focused ? 'videocam' : 'videocam';
+            iconName = focused ? 'map' : 'map';
           } else if (route.name === 'Help') {
             iconName = focused ? 'help' : 'help';
           }
@@ -26,10 +26,13 @@ const AppRoutes = () => (
         },
       })}
       tabBarOptions={{
-        activeTintColor: '#EB8460',
+        activeTintColor: '#DEA82A',
         inactiveTintColor: 'gray',
+        labelStyle: {
+          fontSize: 14
+        },
         style: {
-          backgroundColor: '#EAEAEB',
+          backgroundColor: '#fff',
         }
       }}
     >

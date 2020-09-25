@@ -4,7 +4,7 @@ import AppRoutes from './app.routes';
 
 const Routes = () => {
   const loading = false
-  const user = false
+  const user = true
   // if (loading) {
   //   return (
   //     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
