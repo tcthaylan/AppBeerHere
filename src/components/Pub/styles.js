@@ -1,11 +1,11 @@
 import styled from 'styled-components'
 
-export const Container = styled.View`
+export const Container = styled.TouchableOpacity`
   width: 380px;
   height: 200px;
   border: 1px solid #000;
   padding: 2px;
-  background-color: #fff
+  background-color: #fff;
   border-radius: 3px;
 `
 export const Image = styled.Image.attrs({

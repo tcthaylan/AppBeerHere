@@ -3,9 +3,12 @@ import { View } from 'react-native';
 
 import { Container, About, Name, Address, Image } from './styles';
 
-const Pub = ({ style, name, address }) => {
+const Pub = ({ style, name, address, ...rest }) => {
   return (
-    <Container style={style} >
+    <Container
+      style={style}
+      {...rest}
+    >
       <Image />
       <About>
         <Name>{name}</Name>

@@ -10,7 +10,8 @@ import {
   FooterLink
 } from './styles';
 
-const SignIn = () => {
+const SignIn = ({ navigation }) => {
+
   return (
     <Background>
       <Container>
@@ -30,7 +31,7 @@ const SignIn = () => {
         </Form>
         <SubmitButton>Acessar</SubmitButton>
         <FooterLink>
-          <SignLink onPress={() => { }}>
+          <SignLink onPress={() => { navigation.navigate('SignUp') }}>
             <SignLinkText>Criar conta gratuita</SignLinkText>
           </SignLink>
         </FooterLink>

@@ -1,10 +1,25 @@
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import Icon from 'react-native-vector-icons/MaterialIcons'
+import { createStackNavigator } from '@react-navigation/stack';
+import Icon from 'react-native-vector-icons/MaterialIcons';
 
 import Home from '../screens/Home';
 import Map from '../screens/Map';
+import Pub from '../screens/Pub';
+
+const Stack = createStackNavigator()
+
+const HomeScreens = () => (
+  <Stack.Navigator
+    screenOptions={{
+      headerShown: false
+    }}
+  >
+    <Stack.Screen name="Home" component={Home} />
+    <Stack.Screen name="Pub" component={Pub} />
+  </Stack.Navigator >
+)
 
 const App = createBottomTabNavigator();
 const AppRoutes = () => (
@@ -36,10 +51,12 @@ const AppRoutes = () => (
         }
       }}
     >
-      <App.Screen name="Home" component={Home} />
+      <App.Screen name="Home" component={HomeScreens} />
       <App.Screen name="Map" component={Map} />
     </App.Navigator>
   </NavigationContainer>
 );
+
+
 
 export default AppRoutes

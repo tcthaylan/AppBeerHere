@@ -1,5 +1,5 @@
 import React from 'react';
-import { View } from 'react-native';
+import { View, TouchableOpacity, Text } from 'react-native';
 import {
   Container,
   Header,
@@ -16,7 +16,7 @@ import {
   PubCard
 } from './styles';
 
-const Home = () => {
+const Home = ({ navigation }) => {
   return (
     <Container>
       <Header>
@@ -44,8 +44,13 @@ const Home = () => {
       <PubsContainer>
         <PubText>Cervejárias</PubText>
         <PubsList>
-          <PubCard name="Cervejaria - Goose Island" address="Av. Presidente Castelo Branco, 102 - SP" />
-          <PubCard name="Cervejaria - Goose Island" address="Av. Presidente Castelo Branco, 102 - SP" />
+          {/* <TouchableOpacity onPress={() => console.log('ola')}><Text>Teste</Text></TouchableOpacity> */}
+          <PubCard
+            name="Cervejaria - Goose Island"
+            address="Av. Presidente Castelo Branco, 102 - SP"
+            onPress={() => navigation.navigate('Pub')}
+          />
+          {/* <PubCard name="Cervejaria - Goose Island" address="Av. Presidente Castelo Branco, 102 - SP" /> */}
         </PubsList>
       </PubsContainer>
     </Container>
