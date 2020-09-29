@@ -50,7 +50,6 @@ const Home = ({ navigation }) => {
             address="Av. Presidente Castelo Branco, 102 - SP"
             onPress={() => navigation.navigate('Pub')}
           />
-          {/* <PubCard name="Cervejaria - Goose Island" address="Av. Presidente Castelo Branco, 102 - SP" /> */}
         </PubsList>
       </PubsContainer>
     </Container>
