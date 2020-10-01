@@ -1,8 +1,8 @@
 import styled from 'styled-components/native'
 
 export const Container = styled.View`
-  width: 300px;
   height: 100px;
+  background-color: #fff;
 `
 
 export const BeerImage = styled.Image`
