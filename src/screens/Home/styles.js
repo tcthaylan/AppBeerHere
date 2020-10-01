@@ -14,7 +14,7 @@ export const Header = styled.View`
   padding-top: 30px;
 `
 
-export const ContanerACard = styled.View`
+export const ContainerACard = styled.View`
   justify-content: flex-end;
   align-items: flex-end;
 `
@@ -42,21 +42,23 @@ export const CategoriesList = styled.View`
   flex-direction: row;
 `
 export const CategoryCard = styled(Category)`
-  margin-right: 10px;
+  margin-right: 15px;
   background-color: ${props => props.color ? props.color : '#fff'};
 `
 
 export const PubsContainer = styled.View`
-  margin-top: 15px;
-  margin-left: 15px;
-
-  width: 400px;
+  margin-top: 13px;
+  justify-content: center;
+  align-items: center;
+  height: 280px;
 `
 
 export const PubText = styled.Text`
   font-size: 22px;
   font-weight: bold;
   margin-bottom: 10px;
+  margin-left: 15px;
+  align-self: flex-start;
 `
 
 export const PubsList = styled.View`

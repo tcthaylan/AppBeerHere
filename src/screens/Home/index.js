@@ -1,11 +1,12 @@
 import React from 'react';
 import { View, TouchableOpacity, Text } from 'react-native';
+import { FlatList } from 'react-native-gesture-handler';
 import {
   Container,
   Header,
   HTitle,
   ACard,
-  ContanerACard,
+  ContainerACard,
   CategoriesContainer,
   CategoriesList,
   CategoryCard,
@@ -16,7 +17,34 @@ import {
   PubCard
 } from './styles';
 
+const categories = [
+  { name: 'Cerveja', color: '#F5CB22' },
+  { name: 'Cerveja', color: '#fff' },
+  { name: 'Cerveja', color: '#fff' },
+  { name: 'Cerveja', color: '#fff' },
+  { name: 'Cerveja', color: '#fff' }
+]
+
+const pubs = [
+  { name: "Cervejaria - Goose Island", address: "Av. Presidente Castelo Branco, 102 - SP" },
+  { name: "Cervejaria - Goose Island", address: "Av. Presidente Castelo Branco, 102 - SP" },
+  { name: "Cervejaria - Goose Island", address: "Av. Presidente Castelo Branco, 102 - SP" },
+]
+
 const Home = ({ navigation }) => {
+
+  const renderCategory = ({ item }) => (
+    <CategoryCard name="cerveja" color={item.color} />
+  )
+
+  const renderPubCard = ({ item }) => (
+    <PubCard
+      name="Cervejaria - Goose Island"
+      address="Av. Presidente Castelo Branco, 102 - SP"
+    // onPress={() => navigation.navigate('Pub')}
+    />
+  )
+
   return (
     <Container>
       <Header>
@@ -24,33 +52,30 @@ const Home = ({ navigation }) => {
           <HTitle>Escolha a sua</HTitle>
           <HTitle color="#DEA82A">Cerveja!</HTitle>
         </View>
-        <ContanerACard>
+        <ContainerACard>
           <ACard
             name="Thaylan Conceição"
             city="São Paulo"
             image={require('../../assets/Images/profile-image.jpg')}
           />
-        </ContanerACard>
+        </ContainerACard>
       </Header>
       <CategoriesContainer>
         <CategoryText>Categorias</CategoryText>
         <CategoriesList>
-          <CategoryCard name="cerveja" color="#F5CB22" />
-          <CategoryCard name="cerveja" />
-          <CategoryCard name="cerveja" />
-          <CategoryCard name="cerveja" />
+          <FlatList
+            data={categories}
+            renderItem={renderCategory}
+            horizontal
+          />
         </CategoriesList>
       </CategoriesContainer>
       <PubsContainer>
         <PubText>Cervejárias</PubText>
-        <PubsList>
-          {/* <TouchableOpacity onPress={() => console.log('ola')}><Text>Teste</Text></TouchableOpacity> */}
-          <PubCard
-            name="Cervejaria - Goose Island"
-            address="Av. Presidente Castelo Branco, 102 - SP"
-            onPress={() => navigation.navigate('Pub')}
-          />
-        </PubsList>
+        <FlatList
+          data={pubs}
+          renderItem={renderPubCard}
+        />
       </PubsContainer>
     </Container>
   )
