@@ -1,10 +1,17 @@
-import styled from 'styled-components/native'
+import React from 'react';
+import { View } from 'react-native';
 
-const HeaderImage = styled.Image.attrs({
-  source: require('../../assets/Images/pub.jpg'),
-  resizeMode: "cover"
-})`
-  width: 100%;
-  height: 190px;
-`
-export default HeaderImage
+import { BackgroundImage, TransparentView } from './styles';
+
+const HeaderImage = ({ children }) => {
+  return (
+    <>
+      <BackgroundImage>
+        <TransparentView />
+        {children}
+      </BackgroundImage>
+    </>
+  )
+}
+
+export default HeaderImage;

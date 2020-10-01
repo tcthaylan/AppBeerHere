@@ -1,14 +1,16 @@
 import React from 'react';
 import { View, Text } from 'react-native';
+import GoBack from '../../components/GoBack';
 import HeaderImage from '../../components/HeaderImage'
-import { Container } from './styles';
+import { Container, PubTitle, PubDescription } from './styles';
 
-const Pub = () => {
+const Pub = ({ navigation }) => {
   return (
-    <View>
-      <HeaderImage />
-      <Text>Pub</Text>
-    </View>
+    <Container>
+      <HeaderImage>
+        <GoBack onPress={() => navigation.goBack()} />
+      </HeaderImage>
+    </Container>
   )
 }
 

@@ -41,7 +41,7 @@ const Home = ({ navigation }) => {
     <PubCard
       name="Cervejaria - Goose Island"
       address="Av. Presidente Castelo Branco, 102 - SP"
-    // onPress={() => navigation.navigate('Pub')}
+      onPress={() => navigation.navigate('Pub')}
     />
   )
 
