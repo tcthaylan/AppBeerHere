@@ -3,12 +3,12 @@ import { View, Text } from 'react-native';
 
 // import { Container } from './styles';
 
-const Beer = () => {
+const News = () => {
   return (
     <View>
-      <Text>Beer</Text>
+      <Text>News</Text>
     </View>
   )
 }
 
-export default Beer;
+export default News;

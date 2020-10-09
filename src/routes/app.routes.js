@@ -7,6 +7,8 @@ import Icon from 'react-native-vector-icons/MaterialIcons';
 import Home from '../screens/Home';
 import Map from '../screens/Map';
 import Pub from '../screens/Pub';
+import Beer from '../screens/Beer';
+import News from '../screens/News';
 
 const Stack = createStackNavigator()
 
@@ -18,6 +20,7 @@ const HomeScreens = () => (
   >
     <Stack.Screen name="Home" component={Home} />
     <Stack.Screen name="Pub" component={Pub} />
+    <Stack.Screen name="Beer" component={Beer} />
   </Stack.Navigator >
 )
 
@@ -35,6 +38,8 @@ const AppRoutes = () => (
             iconName = focused ? 'map' : 'map';
           } else if (route.name === 'Help') {
             iconName = focused ? 'help' : 'help';
+          } else if (route.name === 'News') {
+            iconName = focused ? 'library-books' : 'library-books';
           }
 
           return <Icon name={iconName} size={28} color={color} />;
@@ -53,6 +58,7 @@ const AppRoutes = () => (
     >
       <App.Screen name="Home" component={HomeScreens} />
       <App.Screen name="Map" component={Map} />
+      <App.Screen name="News" component={News} />
     </App.Navigator>
   </NavigationContainer>
 );

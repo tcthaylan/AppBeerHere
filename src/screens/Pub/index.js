@@ -4,7 +4,6 @@ import { FlatList } from 'react-native-gesture-handler';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import GoBack from '../../components/GoBack';
 import HeaderImage from '../../components/HeaderImage';
-import BeerCard from '../../components/BeerCard'
 import {
   Container,
   PubTitle,
@@ -16,19 +15,25 @@ import {
   PubCategory,
   Menu,
   MenuText,
-  BeersContainer
+  BeersContainer,
+  BCard
 } from './styles';
 
 const beers = [
-  { name: 'asfdasd' },
-  { name: 'asfdasd' },
-  { name: 'asfdasd' },
+  { name: 'Bierbaum Weiss Helles', description: 'Cerveja Artesanal Brasileira Bierbaum Weiss Helles 600ml' },
+  { name: 'Bierbaum Weiss Helles', description: 'Cerveja Artesanal Brasileira Bierbaum Weiss Helles 600ml' },
+  { name: 'Bierbaum Weiss Helles', description: 'Cerveja Artesanal Brasileira Bierbaum Weiss Helles 600ml' },
+  { name: 'Bierbaum Weiss Helles', description: 'Cerveja Artesanal Brasileira Bierbaum Weiss Helles 600ml' },
 ]
 
 const Pub = ({ navigation }) => {
 
   const renderBeerCard = ({ item }) => (
-    <BeerCard />
+    <BCard
+      name={item.name}
+      description={item.description}
+      onPress={() => navigation.navigate('Beer')}
+    />
   )
 
   return (

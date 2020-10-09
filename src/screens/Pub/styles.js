@@ -1,6 +1,7 @@
 import styled from 'styled-components/native'
 import FavoriteButton from '../../components/FavoriteButton'
 import Tag from '../../components/Tag'
+import BeerCard from '../../components/BeerCard'
 
 export const Container = styled.View``
 
@@ -49,4 +50,10 @@ export const MenuText = styled.Text`
 
 export const BeersContainer = styled.View`
   align-items: center;
+  margin-top: 10px;
+  height: 320px;
+`
+
+export const BCard = styled(BeerCard)`
+  margin-bottom: 10px;
 `

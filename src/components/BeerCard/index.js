@@ -1,15 +1,16 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 
-import { Container, BeerImage, Footer } from './styles';
+import { Container, BeerImage, BeerTextContainer, BeerName, BeerDescription } from './styles';
 
-const BeerCard = () => {
+const BeerCard = ({ style, name, description, ...rest }) => {
   return (
-    <Container>
-      {/* <BeerImage /> */}
-      <Footer>
-        <Text>4,5</Text>
-      </Footer>
+    <Container style={style} {...rest}>
+      <BeerImage />
+      <BeerTextContainer>
+        <BeerName>{name}</BeerName>
+        <BeerDescription>{description}</BeerDescription>
+      </BeerTextContainer>
     </Container>
   )
 }
