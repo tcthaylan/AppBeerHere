@@ -3,10 +3,10 @@ import { View } from 'react-native';
 
 import { BackgroundImage, TransparentView } from './styles';
 
-const HeaderImage = ({ children }) => {
+const HeaderImage = ({ children, style }) => {
   return (
     <>
-      <BackgroundImage>
+      <BackgroundImage style={style} >
         <TransparentView />
         {children}
       </BackgroundImage>
