@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { Text, View, StyleSheet, ScrollView, Dimensions } from 'react-native';
 import MapView from 'react-native-maps';
+import CardPubMaps from '../../components/CardPubMaps'
 // import { Container } from './styles';
 const { height, width } = Dimensions.get('window');
 const styles = StyleSheet.create({
@@ -20,25 +21,6 @@ const styles = StyleSheet.create({
   placesContainer: {
     width: '100%',
     maxHeight: 200,
-  },
-  place: {
-    width: width - 40,
-    maxHeight: 200,
-    backgroundColor: '#FFF',
-    marginHorizontal: 20,
-    borderTopLeftRadius: 10,
-    borderTopRightRadius: 10,
-    padding: 20,
-  },
-  title: {
-    fontWeight: 'bold',
-    fontSize: 18,
-    backgroundColor: 'transparent',
-  },
-  description: {
-    color: '#999',
-    fontSize: 12,
-    marginTop: 5,
   },
 });
 
@@ -128,10 +110,10 @@ const Map = () => {
         }}
       >
         {places.map(place => (
-          <View key={place.id} style={styles.place}>
-            <Text style={styles.title}>{place.title}</Text>
-            <Text style={styles.description}>{place.description}</Text>
-          </View>
+          <CardPubMaps
+            title={place.title}
+            description={place.description}
+          />
         ))}
       </ScrollView>
     </View>
