@@ -44,7 +44,6 @@ export const Menu = styled.View`
 export const MenuText = styled.Text`
   margin-left: 22px;
   font-size: 20px;
-  /* font-weight: bold; */
 `
 
 
