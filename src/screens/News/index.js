@@ -1,14 +1,25 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View } from 'react-native';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { signOut } from '../../store/actions/auth'
+import Button from '../../components/Button'
+import { Container, LogoutButton, Text } from './styles';
 
-// import { Container } from './styles';
-
-const News = () => {
+const News = ({ signOut, auth }) => {
+  const handleSubmit = async () => {
+    await signOut()
+  }
   return (
-    <View>
-      <Text>News</Text>
-    </View>
+    <Container>
+      <LogoutButton onPress={handleSubmit}>
+        <Text>Sair</Text>
+      </LogoutButton>
+    </Container>
   )
 }
 
-export default News;
+const mapStateToProps = state => ({ auth: state.auth })
+const mapDispatchToProps = dispatch => bindActionCreators({ signOut }, dispatch)
+
+export default connect(mapStateToProps, mapDispatchToProps)(News)

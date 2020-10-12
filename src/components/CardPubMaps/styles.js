@@ -28,6 +28,6 @@ export const Title = styled.Text`
 
 export const Description = styled.Text`
   color: #999;
-  font-size: 12;
+  font-size: 12px;
   margin-top: 2px;
 `
