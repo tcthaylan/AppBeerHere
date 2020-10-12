@@ -14,9 +14,9 @@ export const Container = styled.TouchableOpacity.attrs({
   border-radius: 10px;
 `
 
-export const BeerImage = styled.Image.attrs({
-  source: require('../../assets/Images/beer.jpg')
-})`
+export const BeerImage = styled.Image.attrs(props => ({
+  source: props.image
+}))`
   width: 80px;
   height: 80px;
   border: 1px solid #ccc;

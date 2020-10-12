@@ -3,10 +3,10 @@ import { View, Text } from 'react-native';
 
 import { Container, BeerImage, BeerTextContainer, BeerName, BeerDescription } from './styles';
 
-const BeerCard = ({ style, name, description, ...rest }) => {
+const BeerCard = ({ style, name, description, image, ...rest }) => {
   return (
     <Container style={style} {...rest}>
-      <BeerImage />
+      <BeerImage image={image} />
       <BeerTextContainer>
         <BeerName>{name}</BeerName>
         <BeerDescription>{description}</BeerDescription>

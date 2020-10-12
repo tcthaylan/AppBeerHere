@@ -8,9 +8,9 @@ export const Container = styled.TouchableOpacity`
   background-color: #fff;
   border-radius: 3px;
 `
-export const Image = styled.Image.attrs({
-  source: require('../../assets/Images/pub.jpg')
-})`
+export const Image = styled.Image.attrs(props => ({
+  source: props.image
+}))`
   width: 100%;
   height: 130px;
   padding: 5px;

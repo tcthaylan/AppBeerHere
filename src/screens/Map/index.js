@@ -29,8 +29,8 @@ const dataPlaces = [
     id: 1,
     title: 'Casa do café',
     description: 'Café quentinho...',
-    latitude: -27.2106710,
-    longitude: -49.6362700,
+    latitude: -23.6622909,
+    longitude: -46.4147396,
   },
   {
     id: 2,

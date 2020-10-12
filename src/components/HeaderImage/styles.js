@@ -1,9 +1,9 @@
 import { Dimensions } from 'react-native'
 import styled from 'styled-components/native'
 
-export const BackgroundImage = styled.ImageBackground.attrs({
-  source: require('../../assets/Images/pub.jpg')
-})`
+export const BackgroundImage = styled.ImageBackground.attrs(props => ({
+  source: require(`../../assets/Images/pubs/1.jpg`)
+}))`
   width: ${Dimensions.get('window').width};
   height: 230px;
 `
