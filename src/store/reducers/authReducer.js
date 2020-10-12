@@ -13,7 +13,12 @@ export const authReducer = (state = initialState, action) => {
         user: action.payload.user,
         token: action.payload.token
       }
-
+    case actionTypes.SIGN_UP:
+      return {
+        ...state,
+        user: action.payload.user,
+        token: action.payload.token
+      }
     case actionTypes.SIGN_OUT:
       return {
         ...state,

@@ -26,6 +26,25 @@ export const signIn = (email, password) => dispatch => {
     })
 }
 
+export const signUp = (name, email, password) => dispatch => {
+  api.post('/user', { name, email, password })
+    .then(resp => {
+      const { user, token } = resp.data
+
+      api.defaults.headers.Authorization = `Bearer ${token}`
+
+      dispatch({
+        type: actionTypes.SIGN_UP,
+        payload: { user, token }
+      })
+    })
+    .catch(error => {
+      console.log(error);
+      // Alert.alert('Verifique se as suas credenciais estão corretas')
+      return
+    })
+}
+
 export const signOut = () => dispatch => {
   api.defaults.headers.Authorization = ''
   dispatch({

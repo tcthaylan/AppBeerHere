@@ -2,6 +2,7 @@ import React from 'react';
 import * as Yup from 'yup';
 import { Formik } from 'formik';
 import Background from '../../components/Background'
+import { signUp } from '../../store/actions/auth'
 import {
   Container,
   Form,
@@ -11,8 +12,10 @@ import {
   SignLinkText,
   FooterLink
 } from './styles';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
 
-const SignUp = ({ navigation }) => {
+const SignUp = ({ navigation, auth, signUp }) => {
   const formSchema = Yup.object().shape({
     name: Yup.string()
       .required('Nome obrigatório'),
@@ -27,11 +30,8 @@ const SignUp = ({ navigation }) => {
       .oneOf([Yup.ref('password'), null], 'As senhas devem ser iguais')
   });
 
-  const handleSubmit = ({ name, email, password, confirmPassword }) => {
-    console.log(name)
-    console.log(email)
-    console.log(password)
-    console.log(confirmPassword)
+  const handleSubmit = async ({ name, email, password }) => {
+    await signUp(name, email, password)
   }
 
   return (
@@ -111,4 +111,7 @@ const SignUp = ({ navigation }) => {
   )
 }
 
-export default SignUp;
+const mapStateToProps = state => ({ auth: state.auth })
+const mapDispatchToProps = dispatch => bindActionCreators({ signUp }, dispatch)
+
+export default connect(mapStateToProps, mapDispatchToProps)(SignUp)
