@@ -4,7 +4,7 @@ import { Formik } from 'formik';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import Background from '../../components/Background'
-import { getLoggedUser } from '../../store/actions/user'
+import { signIn } from '../../store/actions/auth';
 import {
   Container,
   Form,
@@ -15,7 +15,7 @@ import {
   FooterLink
 } from './styles';
 
-const SignIn = ({ navigation, user }) => {
+const SignIn = ({ navigation, auth, signIn }) => {
   const formSchema = Yup.object().shape({
     email: Yup.string()
       .required('E-mail obrigatório')
@@ -25,9 +25,8 @@ const SignIn = ({ navigation, user }) => {
       .min(6, 'No mínimo 6 dígitos'),
   });
 
-  const handleSubmit = ({ email, password }) => {
-    console.log(email)
-    console.log(password)
+  const handleSubmit = async ({ email, password }) => {
+    await signIn(email, password)
   }
 
   return (
@@ -35,8 +34,8 @@ const SignIn = ({ navigation, user }) => {
       <Container>
         <Formik
           initialValues={{
-            email: '',
-            password: '',
+            email: 'use2r@email.com',
+            password: 'teste123',
           }}
           onSubmit={values => handleSubmit(values)}
           validationSchema={formSchema}
@@ -87,7 +86,7 @@ const SignIn = ({ navigation, user }) => {
   )
 }
 
-const mapStateToProps = state => ({ user: state.user })
-const mapDispatchToProps = dispatch => bindActionCreators({ getLoggedUser }, dispatch)
+const mapStateToProps = state => ({ auth: state.auth })
+const mapDispatchToProps = dispatch => bindActionCreators({ signIn }, dispatch)
 
 export default connect(mapStateToProps, mapDispatchToProps)(SignIn)

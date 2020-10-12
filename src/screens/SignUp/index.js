@@ -12,9 +12,6 @@ import {
   FooterLink
 } from './styles';
 
-
-// import { Container } from './styles';
-
 const SignUp = ({ navigation }) => {
   const formSchema = Yup.object().shape({
     name: Yup.string()
