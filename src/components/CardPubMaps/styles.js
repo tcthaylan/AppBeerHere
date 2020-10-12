@@ -12,21 +12,27 @@ export const Container = styled.TouchableOpacity.attrs({
   padding: 8px;
   border: 1px solid #ddd;
 `
-export const Image = styled.Image.attrs({
-  source: require('../../assets/Images/pub.jpg')
-})`
+export const Image = styled.Image.attrs(props => ({
+  source: props.image
+}))`
   width: 100%;
   height: 130px;
   padding: 5px;
   margin-bottom: 5px;
 `
 
-export const Title = styled.Text`
+export const Title = styled.Text.attrs({
+  numberOfLines: 1,
+  ellipsizeMode: "tail"
+})`
   font-weight: bold;
   font-size: 18px;
 `
 
-export const Description = styled.Text`
+export const Description = styled.Text.attrs({
+  numberOfLines: 1,
+  ellipsizeMode: "tail"
+})`
   color: #999;
   font-size: 12px;
   margin-top: 2px;

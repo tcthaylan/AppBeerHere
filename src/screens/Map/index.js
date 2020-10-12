@@ -24,29 +24,65 @@ const styles = StyleSheet.create({
   },
 });
 
+
+
 const dataPlaces = [
   {
     id: 1,
-    title: 'Casa do café',
-    description: 'Café quentinho...',
-    latitude: -23.6622909,
-    longitude: -46.4147396,
+    name: "Soroko's Bar",
+    description: "Em ambiente sofisticado e convidativo o bar serve coquetéis chamativos entre cervejas artesanais e petiscos.",
+    image: require(`../../assets/Images/pubs/1.jpg`),
+    address: "R. Augusta, 550 - Consolação, São Paulo",
+    latitude: -23.5515763,
+    longitude: -46.6513121
   },
   {
     id: 2,
-    title: 'RocketSeat',
-    description: 'Programação, empreendedorismo e mindset',
-    latitude: -27.2006710,
-    longitude: -49.6362700,
+    name: "Caixote Bar",
+    description: "Drinques clássicos e contemporâneos, cervejas, em espaço descolado com bar feito de engradados de cerveja.",
+    image: require(`../../assets/Images/pubs/2.jpg`),
+    address: "R. Augusta, 914 - Cerqueira César, São Paulo - SP",
+    latitude: -23.5528978,
+    longitude: -46.65451729999999
   },
   {
     id: 3,
-    title: 'Casa do José',
-    description: 'José, tá em casa?',
-    latitude: -27.2006710,
-    longitude: -49.6262700,
-  }
+    name: "Ball Five",
+    description: "Quatro grandes mesas de bilhar são a grande atração do bar, que destoa de outras casas da rua Augusta, de estilo mais alternativo.",
+    image: require(`../../assets/Images/pubs/3.jpg`),
+    address: "R. Augusta, 1149 - Consolação, São Paulo - SP",
+    latitude: -23.5544826,
+    longitude: -46.6561399
+  },
+  {
+    id: 4,
+    name: "The Blue Pub",
+    description: "Ambiente agradável e simples com partidas de futebol em telonas acompanhadas de cerveja e porções.",
+    image: require(`../../assets/Images/pubs/4.jpg`),
+    address: "Alameda Ribeirão Preto, 384 - Bela Vista, São Paulo - SP",
+    latitude: -23.5630124,
+    longitude: -46.6501524
+  },
+  {
+    id: 5,
+    name: "Asterix Cervejaria",
+    description: "Cervejaria com ampla variedade de rótulos nacionais e importados, petiscos e sanduíches em ambiente despojado.",
+    image: require(`../../assets/Images/pubs/5.jpg`),
+    address: "Alameda Joaquim Eugênio de Lima, 573 - Jardim Paulista, São Paulo - SP",
+    latitude: -23.5652345,
+    longitude: -46.65019059999999
+  },
+  {
+    id: 6,
+    name: "Titus Bar",
+    description: "Bar agradável e aconchegante com lista de cervejas artesanais e música ao vivo em certos dias.",
+    image: require(`../../assets/Images/pubs/6.jpg`),
+    address: "R. Rocha, 370 - Bela Vista, São Paulo - SP",
+    latitude: -23.5595657,
+    longitude: -46.6497816
+  },
 ]
+
 
 const initialRegion = {
   latitude: 37.78825,
@@ -79,8 +115,8 @@ const Map = () => {
         {places.map(place => (
           <MapView.Marker
             ref={mark => place.mark = mark}
-            title={place.title}
-            description={place.description}
+            title={place.name}
+            // description={place.description}
             key={place.id}
             coordinate={{
               latitude: place.latitude,
@@ -111,8 +147,9 @@ const Map = () => {
       >
         {places.map(place => (
           <CardPubMaps
-            title={place.title}
+            title={place.name}
             description={place.description}
+            image={place.image}
           />
         ))}
       </ScrollView>
