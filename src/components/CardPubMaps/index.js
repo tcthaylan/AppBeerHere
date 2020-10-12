@@ -1,6 +1,4 @@
 import React from 'react';
-import { View } from 'react-native';
-
 import { Container, Title, Description, Image } from './styles';
 
 const CardPubMaps = ({ title, description, ...rest }) => {

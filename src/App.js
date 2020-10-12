@@ -1,13 +1,13 @@
 import React from 'react';
-import { View } from 'react-native';
 import AuthRoutes from './routes/index'
-// import { Container } from './styles';
+import { Provider } from 'react-redux';
+import { Store } from './store';
 
 const App = () => {
   return (
-    <>
+    <Provider store={Store}>
       <AuthRoutes />
-    </>
+    </Provider>
   )
 }
 

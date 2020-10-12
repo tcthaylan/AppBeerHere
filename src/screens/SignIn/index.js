@@ -1,5 +1,8 @@
 import React from 'react';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
 import Background from '../../components/Background'
+import { getLoggedUser } from '../../store/actions/user'
 import {
   Container,
   Form,
@@ -10,8 +13,8 @@ import {
   FooterLink
 } from './styles';
 
-const SignIn = ({ navigation }) => {
-
+const SignIn = ({ navigation, user }) => {
+  console.log(user)
   return (
     <Background>
       <Container>
@@ -40,4 +43,7 @@ const SignIn = ({ navigation }) => {
   )
 }
 
-export default SignIn;
+const mapStateToProps = state => ({ user: state.user })
+const mapDispatchToProps = dispatch => bindActionCreators({ getLoggedUser }, dispatch)
+
+export default connect(mapStateToProps, mapDispatchToProps)(SignIn)
