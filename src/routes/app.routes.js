@@ -8,6 +8,7 @@ import Home from '../screens/Home';
 import Map from '../screens/Map';
 import Pub from '../screens/Pub';
 import Beer from '../screens/Beer';
+import Perfil from '../screens/Perfil';
 import News from '../screens/News';
 
 const Stack = createStackNavigator()
@@ -34,11 +35,13 @@ const AppRoutes = () => (
 
           if (route.name === 'Home') {
             iconName = focused ? 'home' : 'home';
-          } else if (route.name === 'Map') {
+          } else if (route.name === 'Mapa') {
             iconName = focused ? 'map' : 'map';
           } else if (route.name === 'Help') {
             iconName = focused ? 'help' : 'help';
-          } else if (route.name === 'News') {
+          } else if (route.name === 'Perfil') {
+            iconName = focused ? 'person' : 'person';
+          } else {
             iconName = focused ? 'library-books' : 'library-books';
           }
 
@@ -57,8 +60,9 @@ const AppRoutes = () => (
       }}
     >
       <App.Screen name="Home" component={HomeScreens} />
-      <App.Screen name="Map" component={Map} />
+      <App.Screen name="Mapa" component={Map} />
       <App.Screen name="News" component={News} />
+      <App.Screen name="Perfil" component={Perfil} />
     </App.Navigator>
   </NavigationContainer>
 );

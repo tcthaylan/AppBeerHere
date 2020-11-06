@@ -21,11 +21,11 @@ import {
 } from './styles';
 
 const categories = [
-  { name: 'Cerveja', color: '#F5CB22' },
-  { name: 'Cerveja', color: '#fff' },
-  { name: 'Cerveja', color: '#fff' },
-  { name: 'Cerveja', color: '#fff' },
-  { name: 'Cerveja', color: '#fff' }
+  { name: 'IPA', color: '#F5CB22' },
+  { name: 'Pilsen', color: '#fff' },
+  { name: 'Stout', color: '#fff' },
+  { name: 'Weiss', color: '#fff' },
+  { name: 'Porter', color: '#fff' }
 ]
 
 const pubs = [
@@ -82,7 +82,7 @@ const Home = ({ navigation, pub, getPubs }) => {
   }, [])
 
   const renderCategory = ({ item }) => (
-    <CategoryCard name="cerveja" color={item.color} />
+    <CategoryCard name={item.name} color={item.color} />
   )
 
   const renderPubCard = ({ item }) => {
