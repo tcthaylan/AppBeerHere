@@ -8,6 +8,7 @@ export const getPubs = () => dispatch => {
 
   api.get('/pub')
     .then(resp => {
+      console.log('resp.data')
       console.log(resp.data)
       dispatch({
         type: actionTypes.GET_PUBS,

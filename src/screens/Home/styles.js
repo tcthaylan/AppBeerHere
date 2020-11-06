@@ -4,14 +4,26 @@ import Category from '../../components/Category'
 import Pub from '../../components/Pub'
 
 export const Container = styled.View`
-
+  flex: 1;
 `
 export const Header = styled.View`
   flex-direction: row;
-  /* border: 1px solid #000; */
   height: 150px;
   justify-content: space-between;
   padding-top: 30px;
+
+`
+
+export const CategoriesContainer = styled.View`
+  margin-top: 0px;
+  margin-left: 15px;
+`
+
+export const PubsContainer = styled.View`
+  margin-top: 13px;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
 `
 
 export const ContainerACard = styled.View`
@@ -28,10 +40,7 @@ export const HTitle = styled.Text`
   color: ${props => props.color ? props.color : '#000'};
   margin-left: 15px;
 `
-export const CategoriesContainer = styled.View`
-  margin-top: 0px;
-  margin-left: 15px;
-`
+
 export const CategoryText = styled.Text`
   font-size: 22px;
   font-weight: bold;
@@ -46,12 +55,7 @@ export const CategoryCard = styled(Category)`
   background-color: ${props => props.color ? props.color : '#fff'};
 `
 
-export const PubsContainer = styled.View`
-  margin-top: 13px;
-  justify-content: center;
-  align-items: center;
-  height: 280px;
-`
+
 
 export const PubText = styled.Text`
   font-size: 22px;

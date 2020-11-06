@@ -126,13 +126,13 @@ const Home = ({ navigation, pub, getPubs }) => {
         </CategoriesList>
       </CategoriesContainer>
       <PubsContainer>
-
         {pub.loading ? (
           <Text>Loading</Text>
         ) : (
             <>
-              <PubText>Cervejárias</PubText>
+              <PubText>Cervejarias</PubText>
               <FlatList
+                contentContainerStyle={{ flexGrow: 1, }}
                 data={pubs}
                 renderItem={renderPubCard}
               />

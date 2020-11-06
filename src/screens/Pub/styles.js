@@ -3,7 +3,9 @@ import FavoriteButton from '../../components/FavoriteButton'
 import Tag from '../../components/Tag'
 import BeerCard from '../../components/BeerCard'
 
-export const Container = styled.View``
+export const Container = styled.View`
+  flex: 1;
+`
 
 export const PubName = styled.Text`
   font-size: 26px;
@@ -49,9 +51,11 @@ export const MenuText = styled.Text`
 `
 
 export const BeersContainer = styled.View`
-  align-items: center;
   margin-top: 10px;
-  height: 320px;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  flex: 1;
 `
 
 export const BCard = styled(BeerCard)`

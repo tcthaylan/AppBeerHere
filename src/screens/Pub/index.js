@@ -87,10 +87,13 @@ const Pub = ({ navigation, route }) => {
         <MenuText>Cardápio</MenuText>
       </Menu>
       <BeersContainer>
-        <FlatList
-          data={beers}
-          renderItem={renderBeerCard}
-        />
+        <>
+          <FlatList
+            contentContainerStyle={{ flexGrow: 1, }}
+            data={beers}
+            renderItem={renderBeerCard}
+          />
+        </>
       </BeersContainer>
     </Container>
   )

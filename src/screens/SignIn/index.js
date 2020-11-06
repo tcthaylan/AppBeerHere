@@ -34,8 +34,8 @@ const SignIn = ({ navigation, auth, signIn }) => {
       <Container>
         <Formik
           initialValues={{
-            email: '',
-            password: '',
+            email: 'tc.thaylan@gmail.com',
+            password: 'teste123',
           }}
           onSubmit={values => handleSubmit(values)}
           validationSchema={formSchema}
